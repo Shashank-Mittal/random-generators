@@ -25,15 +25,20 @@ special = "!#$%&’()*+,-./:;<=>?[|]{}^~@_"
 new_pass_count=0
 ascii_text = ""
 new_pass=""
-
+counter=0
 # will determine which components/character groups of ascii will be in the password
 def components():
+    global counter
+    global copy_length_of_pass
     def lower_def():
         global ascii_text
         global length_of_pass
+        global counter
         try:
             lower_answer = int(input("\nHow many lower case letters you want? "))
-        except:
+            counter=counter+lower_answer
+            print(counter)
+        except ValueError:
             print("Please enter only Positive numbers")
             lower_def()
         if (lower_answer > 0 and lower_answer <= length_of_pass ) :
@@ -46,13 +51,16 @@ def components():
         else: # if yes or no is not given, re-ask the question
             print("Please enter the value which is less than the given password length ")
             lower_def()
-    lower_def()
+    if(counter<copy_length_of_pass):
+    	lower_def()
 
     def upper_def():
         global ascii_text
         global length_of_pass
+        global counter
         try:
             upper_answer = int(input("\nHow many uppercase case letters you want? "))
+            counter=counter+upper_answer
         except:
             print("Please enter only Positive numbers")
             upper_def()
@@ -66,13 +74,16 @@ def components():
         else:
             print("Please enter the value which is less than the given password length ")
             upper_def()
-    upper_def()
+    if(counter<copy_length_of_pass):
+    	upper_def()
     
     def special_def():
         global ascii_text
         global length_of_pass
+        global counter
         try:
             special_answer = int(input("\nHow many special charector you want? "))
+            counter=counter+special_answer
         except:
             print("Please enter only Positive numbers")
             special_def()
@@ -86,13 +97,16 @@ def components():
         else:
             print("Please enter the value which is less than the given password length ")
             special_def()
-    special_def()
+    if(counter<copy_length_of_pass):
+    	special_def()
     
     def number_def():
         global ascii_text
         global length_of_pass
+        global counter
         try:
             numbers_answer = int(input("\nHow many numbers charector you want? "))
+            counter=counter+numbers_answer
         except:
             print("Please enter only Positive numbers")
             number_def()
@@ -106,7 +120,8 @@ def components():
         else:
             print("Please enter the value which is less than the given password length ")
             number_def()
-    number_def()
+    if(counter<copy_length_of_pass):
+    	number_def()
 
 code_generate=components()
 
