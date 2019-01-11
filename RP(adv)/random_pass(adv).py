@@ -72,7 +72,7 @@ def components():
         global length_of_pass
         global counter
         try:
-            special_answer = int(input("\nHow many special charector you want? "))
+            special_answer = int(input("\nHow many special character you want? "))
             counter=counter+special_answer
         except:
             print("Please enter only Positive numbers")
@@ -95,7 +95,7 @@ def components():
         global length_of_pass
         global counter
         try:
-            numbers_answer = int(input("\nHow many numbers charector you want? "))
+            numbers_answer = int(input("\nHow many numbers character you want? "))
             counter=counter+numbers_answer
         except:
             print("Please enter only Positive numbers")
