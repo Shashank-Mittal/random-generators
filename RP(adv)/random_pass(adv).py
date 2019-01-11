@@ -2,19 +2,9 @@ import re
 import random
 import string
 
-# makes sure that user input is valid and that any ValueErrors are circumvented
-while True:
-    try:
-        length_of_pass = int(input("How long do you want the password to be? "))
-        copy_length_of_pass=length_of_pass
-    except ValueError:
-        print("**Please make sure you only use numbers.**\n")
-        continue
-
-    if length_of_pass < 0:
-        print("**You've used an invalid number. Please use a number that is not negative.**\n")
-    else:
-        break
+# max limit of password
+length_of_pass = 100
+copy_length_of_pass = length_of_pass
 
 # the four variables below are the components/characters to make up ascii _____
 lowercase = string.ascii_lowercase
@@ -82,7 +72,7 @@ def components():
         global length_of_pass
         global counter
         try:
-            special_answer = int(input("\nHow many special charector you want? "))
+            special_answer = int(input("\nHow many special character you want? "))
             counter=counter+special_answer
         except:
             print("Please enter only Positive numbers")
@@ -105,7 +95,7 @@ def components():
         global length_of_pass
         global counter
         try:
-            numbers_answer = int(input("\nHow many numbers charector you want? "))
+            numbers_answer = int(input("\nHow many numbers character you want? "))
             counter=counter+numbers_answer
         except:
             print("Please enter only Positive numbers")
